@@ -1,0 +1,54 @@
+<div class="main_container" [class.active]="openMenu">
+	<div *ngIf="showErrorMsg">
+		<app-message [message]="msg"></app-message>
+	</div>
+	<h5 class="title">Dermatologists</h5>
+	<p-table #dt1 [value]="Dermatologists" dataKey="id" [rows]="10" [showCurrentPageReport]="true"
+		[rowsPerPageOptions]="[10, 25, 50]" [loading]="loading" styleClass="p-datatable-customers p-datatable-gridlines"
+		[paginator]="true" currentPageReportTemplate="Showing {first} to {last} of {totalRecords} entries"
+		[globalFilterFields]="['Name']">
+		<ng-template pTemplate="caption">
+			<div class="p-d-flex">
+				<span class="p-input-icon-left p-ml-auto">
+					<input pInputText type="text" (input)="filterGlobal($event)" placeholder="Search keyword"class="search" />
+					<i class="pi pi-search"></i>
+				</span>
+			</div>
+		</ng-template>
+		<ng-template pTemplate="header">
+			<tr>
+				<th>
+					<div class="p-d-flex p-jc-between p-ai-center">
+						Name
+						<p-columnFilter type="text" field="name" display="menu"></p-columnFilter>
+					</div>
+				</th>
+				<th>
+					<div class="p-d-flex p-jc-between p-ai-center">Email</div>
+				</th>
+                <th>
+					<div class="p-d-flex p-jc-between p-ai-center">Settings</div>
+				</th>
+			</tr>
+		</ng-template>
+		<ng-template pTemplate="body" let-Dermatologist>
+			<tr>
+				<td>
+					{{ Dermatologist.name }}
+				</td>
+				<td>
+					<span class="image-text">{{ Dermatologist.email }}</span>
+				</td>
+				<td class="settings_icon">
+					<i class="pi pi-pencil" style="font-size: 1rem;" (click)="navigate(Dermatologist.id)"></i>
+					<i class="pi pi-trash" style="font-size: 1rem;" (click)="delete(Dermatologist.id)"></i>
+				</td>
+			</tr>
+		</ng-template>
+		<ng-template pTemplate="emptymessage">
+			<tr>
+				<td colspan="7">No Dermatologists Found.</td>
+			</tr>
+		</ng-template>
+	</p-table>
+</div>

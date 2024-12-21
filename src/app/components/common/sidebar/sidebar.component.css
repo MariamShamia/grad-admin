@@ -1,0 +1,135 @@
+a {
+  color: inherit;
+}
+aside {
+  width: 100%;
+  height: 100%;
+  background-color: var(--body);
+  border-right: 2px solid #fff;
+}
+
+aside.active {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+.close {
+  display: none;
+  visibility: hidden;
+}
+
+.line_menu {
+  margin-top: 10px;
+  cursor: pointer;
+  display: flex;
+  width: 90%;
+  border-radius: 0 15px 15px 0;
+  align-items: center;
+  height: 45px;
+  overflow: hidden;
+  padding: 15px;
+  transition: 0.2s ease-in-out;
+  user-select: none;
+}
+
+aside.active .line_menu {
+  width: 50px;
+  height: 50px;
+  border-radius: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.title_line {
+  margin-left: 10px;
+  font-size: 1rem;
+  animation: before 0.6s ease-in-out;
+}
+
+@keyframes before {
+  0% {
+    opacity: 0;
+  }
+}
+
+aside.active .line_menu .title_line {
+  display: none;
+  opacity: 0;
+}
+
+.line_menu:hover {
+  background-color: var(--secondary);
+}
+
+.line_menu.active {
+  /* color: var(--primary); */
+  color: rgba(137, 43, 226, 0.616);
+  font-weight: 500;
+}
+
+.line_menu i {
+  fill: rgb(104, 104, 104);
+}
+
+.line_menu.active i {
+  fill: rgb(0, 0, 0);
+}
+.icon_line {
+  margin-top: 4px;
+}
+@media screen and (max-width: 1000px) {
+  .close {
+    display: block;
+  }
+  aside .line_menu .title_line {
+    font-size: 10px;
+  }
+  .line_menu {
+    padding: 4px;
+  }
+}
+@media screen and (max-width: 700px) {
+  .close.active {
+    display: flex;
+    margin: 15px;
+    font-size: 18px;
+    visibility: visible;
+    align-self: flex-end;
+    cursor: pointer;
+  }
+  aside.active {
+    width: 100%;
+  }
+
+  aside.active .line_menu {
+    width: 150px;
+    height: 40px;
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    margin: 15px 0;
+    padding: 13px;
+  }
+
+  aside .line_menu .title_line {
+    display: none;
+    opacity: 0;
+  }
+
+  .line_menu:hover {
+    border-radius: 5px;
+  }
+
+  .line_menu i {
+    width: 20px;
+    fill: rgb(0, 0, 0);
+  }
+  aside.active .line_menu .title_line {
+    display: block;
+    opacity: 1;
+    width: 200px;
+    z-index: 2;
+  }
+}

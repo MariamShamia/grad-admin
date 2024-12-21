@@ -1,0 +1,33 @@
+<div
+  class="profile-container"
+  *ngIf="!completeformprofile"
+  [class.aisdesmall]="asideService.getOpenAsideValue()"
+>
+  <div class="error_div" *ngIf="showMsg">
+    <app-message [message]="msg$ | async"></app-message>
+  </div>
+  <div class="basic-info">
+    <h3 class="basic-word">Edit Dermatologist</h3>
+  </div>
+  <div class="profile-inputs">
+    <from [formGroup]="DermatologistForm">
+      <div class="admin-container">
+        <div class="label-profile">
+          <label class="label">Dermatologist's Email</label>
+          <input
+            type="text"
+            class="info-input"
+            formControlName="email"
+          />
+        </div>
+        <div class="label-profile">
+          <label for class="label">Dermatologist's Name</label>
+          <input type="text" class="info-input" formControlName="name" />
+        </div>
+        <div class="btns">
+          <button class="profile-btn" (click)="edit()">Save</button>
+        </div>
+      </div>
+    </from>
+  </div>
+</div>

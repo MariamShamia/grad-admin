@@ -1,0 +1,52 @@
+<div class="profile-container" [class.aisdesmall]="asideService.getOpenAsideValue()">
+  <div class="error_div" *ngIf="showMsg">
+    <app-message [message]="msg$ | async"></app-message>
+  </div>
+  <div class="basic-info">
+    <h3 class="basic-word">Edit Routine</h3>
+  </div>
+  <div class="profile-inputs">
+    <from *ngIf="routineForm && routineForm.controls['name']" [formGroup]="routineForm">
+      <div class="admin-profile-table">
+        <div class="label-profile">
+          <label class="label">Name</label>
+          <input type="text" class="info-input" formControlName="name" />
+        </div>
+        <div class="label-profile">
+          <label class="label">Skin Type</label>
+          <p-dropdown class="info-drop" [options]="skinType" formControlName="skinType" optionLabel="name">
+          </p-dropdown>
+        </div>
+        <div class="label-profile">
+          <label class="label">Image Url</label>
+          <input type="text" class="info-input" formControlName="urlImage" />
+        </div>
+      
+      <div class="label-profile ">
+        <label class="label">Skin Concerns related</label>
+        <div class="concern-container">
+          <div *ngFor="let concern of skinConcernsList" class="concern-item" >
+            <input type="checkbox" 
+            [value]="concern?.value" 
+            (change)="onCheckboxChange($event)"
+            [checked]="routineForm.get('skinConcerns')?.value?.includes(concern?.value)"
+            />
+            {{ concern.label }}
+          </div>
+        </div>
+      </div>
+       <div class="label-profile">
+          <label class="label">Description</label>
+          <textarea type="text" class="info-input" formControlName="description"></textarea>
+        </div>
+        <div class="label-profile" >
+          <label class="label">Steps</label>
+          <textarea type="text" class="info-input" formControlName="steps"></textarea>
+        </div>
+      </div>
+    </from>
+    <div class="btns">
+      <button class="profile-btn" (click)="edit()">Save</button>
+    </div>
+  </div>
+</div>

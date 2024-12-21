@@ -1,0 +1,15 @@
+
+<ng-container *ngIf="dashboardPages">
+  <app-nav (isMenuopen)="checkMenu($event)" ></app-nav>
+</ng-container>
+<div [class.content]="dashboardPages"[class.auth]="!dashboardPages" >
+  <app-sidebar
+    [isSideSmall]="openMenu"
+    class="bowl_aside"
+    [class.active]="openMenu"
+    *ngIf="dashboardPages"
+    (isMenuopen)="checkMenu($event)"
+  ></app-sidebar>
+
+  <router-outlet></router-outlet>
+</div>

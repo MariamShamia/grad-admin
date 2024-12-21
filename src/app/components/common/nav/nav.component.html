@@ -1,0 +1,30 @@
+<nav>
+  <div *ngIf="store.loader" class="loader"></div>
+
+  <div class="left_nav">
+    <div class="titles">
+      <div (click)="onMenu()" class="menu btn_bo">
+        <svg focusable="false" viewBox="0 0 24 24">
+          <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"></path>
+        </svg>
+      </div>
+      <div class="logo">
+        <img src="../../../../assets/images/Logo-project.jpg.jpg" alt="Glow logo" />
+      </div>
+
+    </div>
+    <!-- {{asideService.sectionName$ | async}} -->
+     <h1>Skin care routine</h1>
+  </div>
+  
+  <div class="user_profile">
+    <div class="user_image">
+      <img src="../../../../assets/images/Admin-pic.jpg" (click)="profile()" />
+    </div>
+
+    <div class="profile_contact">
+      <span class="admin_name">{{ userName || 'Mariam' }}</span>
+      <span class="admin_email">{{ emailUser || 'admin2023@gmail.com' }}</span>
+    </div>
+  </div>
+</nav>

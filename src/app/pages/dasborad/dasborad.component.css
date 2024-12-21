@@ -1,0 +1,77 @@
+a {
+  color: inherit;
+}
+.main_page {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.main_container {
+  width: 80%;
+  transition: 0.3s ease-in-out;
+  margin: 80px 100px 10px 19%;
+  height: 100%;
+}
+
+.main_container.active {
+  width: calc(100% - 75px);
+  margin-left: 75px;
+}
+.search{
+  border-radius: 22px;
+  width: 240px;
+  height: 50px;
+}
+.title {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 25px 0;
+  font-size: 22px;
+  color: var(--label);
+  
+}
+.settings_icon {
+  display: flex;
+  height: 17.5vh;
+  align-items: center;
+  justify-content: space-evenly;
+}
+:host ::ng-deep .p-paginator .p-paginator-current,
+:host ::ng-deep .p-paginator .p-paginator-first,
+:host ::ng-deep .p-paginator .p-paginator-prev,
+:host ::ng-deep .p-paginator .p-paginator-next,
+:host ::ng-deep .p-paginator .p-paginator-last {
+  color: var(--primary);
+}
+:host ::ng-deep .p-paginator .p-paginator-pages .p-paginator-page.p-highlight {
+  background-color: var(--primary);
+  border-color: var(--primary);
+}
+@media screen and (max-width: 700px) {
+  .content {
+    width: 95%;
+    margin: 65px auto;
+  }
+  .main_container {
+    width: 100%;
+    margin-left: 0px;
+  }
+  .main_container.active {
+    display: none;
+    visibility: hidden;
+  }
+
+  .bowl_aside {
+    width: 75px;
+    background-color: #fff;
+    display: none;
+    visibility: hidden;
+  }
+
+  .bowl_aside.active {
+    visibility: visible;
+    display: block;
+    width: 80%;
+  }
+}

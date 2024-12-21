@@ -1,0 +1,40 @@
+.content {
+  height: calc(100vh - 65px);
+  margin-top: 35px;
+  width: 100%;
+  background-color: var(--body);
+}
+
+.bowl_aside {
+  position: fixed;
+  height: 100%;
+  transition: 0.3s ease-in-out;
+  width: 17%;
+  background-color: var(--body);
+}
+
+.bowl_aside.active {
+  width: 75px;
+  background-color: #fff;
+}
+@media (max-width: 700px) {
+  .content {
+    width: 95%;
+    margin: 45px auto;
+  }
+  .bowl_aside {
+    width: 75px;
+    background-color: #fff;
+    display: none;
+    visibility: hidden;
+  }
+
+  .bowl_aside.active {
+    visibility: visible;
+    display: block;
+    width: 80%;
+  }
+  .auth{
+    margin-top: 10px;
+  }
+}

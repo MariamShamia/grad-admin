@@ -1,0 +1,155 @@
+nav {
+	position: fixed;
+	height: 65px;
+	background-color: var(--body);
+	left: 0;
+	top: 0;
+	width: 98%;
+	display: flex;
+	z-index: 100;
+	align-items: center;
+	justify-content: space-between;
+	border-bottom: 1px solid #eee;
+}
+.logo {
+	width: 110px;	
+}
+.logo img {
+	width: 100%;
+	padding-top: 10px;
+	height: 68px;
+}
+
+.left_nav {
+	display: flex;
+	align-items: center;
+	width: 350px;
+	justify-content: space-between;
+}
+.left_nav h1{
+    color:rgb(97 58 138 / 73%);	
+    text-align: center;
+    font-size: 25px;
+    font-family: Kalnia;
+}
+
+.titles {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	width: 150px;
+}
+
+.title_page {
+	font-size: 1.2rem;
+	font-weight: 500;
+	color: var(--primary);
+}
+
+.btn_bo {
+	width: 44px;
+	height: 44px;
+	border-radius: 50%;
+	display: flex;
+	cursor: pointer;
+	align-items: center;
+	justify-content: center;
+}
+
+.btn_bo:hover {
+	box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+	background-color: var(--body);
+}
+
+.btn_bo svg {
+	width: 25px;
+	height: 25px;
+	fill: rgb(104, 104, 104);
+}
+
+.btn_bo:hover svg {
+	fill: rgb(0, 0, 0);
+}
+
+.user_profile {
+	display: flex;
+	align-items: center;
+	background-color: white;
+	border-radius:39px;
+	width: 220px;
+	height: 60px;
+	
+	
+}
+.user_image {
+	width: 35px;
+	height: 35px;
+    border-radius: 50%;
+	margin-left: 10px;
+}
+
+.profile_contact {
+	margin: 0 18px;
+	display: flex;
+	flex-direction: column;
+	font-size: 12px;
+	line-height: 1.5;
+	fill:#ffffff;
+}
+.admin_name {
+	font-size: 14px;
+	font-weight: 500;
+	color: var(--primary);
+	font-family: Roboto;
+}
+.admin_email {
+	color: #8b8b8b;
+}
+
+.loader::before {
+	position: absolute;
+	content: "";
+	left: 0;
+	width: 20%;
+	height: 100%;
+	background-color: rgb(255, 46, 46);
+	border-radius: 20px;
+	animation: autoLoad 1.5s linear infinite;
+}
+
+@keyframes autoLoad {
+	0% {
+		width: 5%;
+	}
+
+	50% {
+		width: 35%;
+	}
+
+	80% {
+		width: 10%;
+	}
+
+	100% {
+		left: 120%;
+	}
+}
+@media (max-width: 450px) {
+	nav {
+		justify-content: flex-start;
+		height: 50px;
+		margin: 10px 0;
+	}
+	.left_nav {
+		width: 90%;
+	}
+	.logo {
+		width: 90px;
+		height: 30px;
+		border-radius: 50%;
+	}
+	.user_profile {
+		display: none;
+		visibility: hidden;
+	}
+}

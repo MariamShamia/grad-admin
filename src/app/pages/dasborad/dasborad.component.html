@@ -1,0 +1,70 @@
+<div class="main_container" [class.active]="openMenu">
+	<div *ngIf="showErrorMsg">
+		<app-message [message]="msg"></app-message>
+	</div>
+	<h5 class="title">Skin care Routine</h5>
+	<p-table #dt1 [value]="routines" dataKey="id" [rows]="10" [showCurrentPageReport]="true"
+		[rowsPerPageOptions]="[10, 25, 50]" [loading]="loading" styleClass="p-datatable-customers p-datatable-gridlines"
+		[paginator]="true" currentPageReportTemplate="Showing {first} to {last} of {totalRecords} entries"
+		[globalFilterFields]="['Name']">
+		<ng-template pTemplate="caption">
+			<div class="p-d-flex">
+				<span class="p-input-icon-left p-ml-auto">
+					<input pInputText type="text" (input)="filterGlobal($event)" placeholder="Search keyword" class="search" />
+					<i class="pi pi-search"></i>
+				</span>
+			</div>
+		</ng-template>
+		<ng-template pTemplate="header">
+			<tr>
+				<th>
+					<div class="p-d-flex p-jc-between p-ai-center">
+						Name
+						<p-columnFilter type="text" field="name" display="menu"></p-columnFilter>
+					</div>
+				</th>
+				<th>
+					<div class="p-d-flex p-jc-between p-ai-center">Description</div>
+				</th>
+				<th>
+					<div class="p-d-flex p-jc-between p-ai-center">Skin type</div>
+				</th>
+				<th>
+					<div class="p-d-flex p-jc-between p-ai-center">Concerns</div>
+				</th>
+				<th>
+					<div class="p-d-flex p-jc-between p-ai-center">Settings</div>
+				</th>
+			</tr>
+		</ng-template>
+		<ng-template pTemplate="body" let-routine>
+			<tr>
+				<td>
+					{{ routine.name }}
+				</td>
+				
+				<td>
+					<span class="image-text">{{ routine.description }}</span>
+				</td>
+				<td>
+					<span class="image-text">{{ routine.skinType }}</span>
+				</td>
+				<td>
+					<span class="image-text">
+						{{ routine.skinConcerns.join(', ') }}
+					  </span>
+					
+				 </td>
+				<td class="settings_icon">
+					<i class="pi pi-pencil" style="font-size: 1rem;" (click)="navigate(routine.id)"></i>
+					<i class="pi pi-trash" style="font-size: 1rem;" (click)="delete(routine.id)"></i>
+				</td>
+			</tr>
+		</ng-template>
+		<ng-template pTemplate="emptymessage">
+			<tr>
+				<td colspan="7">No routine Found.</td>
+			</tr>
+		</ng-template>
+	</p-table>
+</div>

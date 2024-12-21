@@ -1,0 +1,51 @@
+/* You can add global styles to this file, and also import other style files */
+@import "../node_modules/primeicons/primeicons.css";
+@import "../node_modules/primeng/resources/themes/bootstrap4-light-blue/theme.css";
+@import "../node_modules/primeng/resources/primeng.min.css";
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  outline: none;
+  font-family: "Roboto", sans-serif;
+}
+
+button {
+  cursor: pointer;
+}
+img {
+  width: 100%;
+  height: 100%;
+}
+a{
+  text-decoration: none;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  --body: #F7F7F7;
+  /* --text: rgb(104, 104, 104); */
+  --text: rgb(5, 5, 5);
+  --shadow:   1px 2px 8px #ccc ;
+  --primary: #415380;
+  --secondary:#ececec;
+  --main:#000;
+  --btn:#918e8e;
+  --label:rgb(77 52 103 / 73%);
+}
+
+body {
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+  color: var(--text);
+  background-color: var(--body);
+  /* background-image: url(assets/images/background-login.png);
+  background-size: cover;       
+  background-repeat: no-repeat; */
+ 
+}
+
