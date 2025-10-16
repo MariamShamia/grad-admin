@@ -1,5 +1,5 @@
-# [Graduation](https://graduation-175d5.web.app/login)
-Fitness apps become famous for increasing health awareness as they solve all modern-day problems.
+# [Graduation]
+Glow apps become famous for increasing health awareness as they solve all modern-day problems.
 
 ## User story:
 
