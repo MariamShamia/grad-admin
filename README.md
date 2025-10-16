@@ -1,16 +1,15 @@
 # [Graduation]
-Glow apps become famous for increasing health awareness as they solve all modern-day problems.
+An Admin Dashboard for managing products, and determanologist app settings in the **Glow App** — a graduation project showcasing modern UI design and efficient backend management.
 
-## User story:
+## Features :
+👩‍⚕️ Dermatologist Management — View, edit, and delete dermatologist accounts
 
-As an Admin, you can create account using email and password.
-As an Admin, you can log in to your account using email and password.
-As an Admin, you can reset your password.
-As an Admin, you can view the routines list.
-As an Admin, you can add a new routine.
-As an Admin, you can edit routines.
-As an Admin, you can delete routine.
-As an Admin, you can add a Dermatologist's email.
+📝 skincare Management — Add, update, and manage skin care content dynamically
+
+📊 Dashboard Analytics — Overview of dermatologist data Skin care routine.
+
+🔐 Secure Authentication using Firebase
+
 
 ---
 
