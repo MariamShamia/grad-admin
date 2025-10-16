@@ -24,7 +24,7 @@ Database: Firestore.
 
 ------
 ## How to Launch App Locally
-* clone this repo by typing this command in the terminal: https://github.com/reemsh2000/graduation_admin
+* clone this repo 
 * Run `npm i to install`.
 * Run `npm start`.
 
